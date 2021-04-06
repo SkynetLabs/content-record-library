@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "post-me": "^0.4.5",
-    "skynet-js": "^3.0.2"
+    "skynet-js": "^3.0.2",
+    "skynet-mysky-utils": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.37"

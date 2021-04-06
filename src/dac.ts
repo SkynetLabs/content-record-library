@@ -1,14 +1,17 @@
 import { IContentCreation, IContentInteraction } from "./types";
-import { Permission } from "skynet-mysky-utils";
+import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
+const DAC_DOMAIN = "contentrecord.hns";
+
 export class ContentRecordDAC extends DacLibrary {
-  public constructor(dacUrl: string) {
-    super(dacUrl);
+  public constructor() {
+    super(DAC_DOMAIN);
   }
   
   public getPermissions(): Permission[] {
-    return [];
+    const perm = new Permission(DAC_DOMAIN, DAC_DOMAIN, PermCategory.Discoverable, PermType.Read);
+    return [perm];
   }
 
   public async recordCreate(data: IContentCreation): Promise<string> {
