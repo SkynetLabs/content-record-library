@@ -9,7 +9,5 @@
     "strictPropertyInitialization": false,
     "target": "es5",
     "lib": ["es2020"],
-    "types": ["node"],
-    "typeRoots": ["./types", "./node_modules/@types"]
   }
 }
