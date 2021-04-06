@@ -1,5 +1,13 @@
 # Content Record Library
 
+## NOTE
+
+Currently needs:
+```
+npm link skynet-mysky-utils
+npm link skynet-js // dac branch
+```
+
 ## Introduction
 
 The Content Record library is a small convenience class that extends from the

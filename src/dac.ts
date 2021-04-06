@@ -1,5 +1,5 @@
 import { IContentCreation, IContentInteraction } from "./types";
-import { Permission } from "skynet-interface-utils";
+import { Permission } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js'
 
 export class ContentRecordDAC extends DacLibrary {
