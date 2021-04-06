@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "emitDeclarationOnly": true,
+      "esModuleInterop": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "declaration": true,
+      "declarationMap": true,
+      "isolatedModules": true,
+      "outDir": "dist",
+    },
+    "include": ["src"],
+  }
+  

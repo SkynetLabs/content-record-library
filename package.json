@@ -2,8 +2,9 @@
   "name": "content-record-library",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc --project tsconfig.build.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,5 +12,8 @@
   "dependencies": {
     "post-me": "^0.4.5",
     "skynet-js": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37"
   }
 }
