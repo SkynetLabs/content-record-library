@@ -7,8 +7,8 @@ export class ContentRecordDAC extends DacLibrary {
     super(dacUrl);
   }
   
-  public async getPermissions(): Promise<Permission[]> {
-    return Promise.resolve([])
+  public getPermissions(): Permission[] {
+    return []
   }
 
   public async recordCreate(data: IContentCreation): Promise<string> {
