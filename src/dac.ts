@@ -2,7 +2,7 @@ import { IContentCreation, IContentInteraction } from "./types";
 import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
-const DAC_DOMAIN = "contentrecord.hns";
+const DAC_DOMAIN = "vg189fcmeof63fjjfrlcfsfgj7pbb4b1pts0ejjfbvdj9c1dufcakt0";
 
 export class ContentRecordDAC extends DacLibrary {
   public constructor() {
@@ -26,8 +26,8 @@ export class ContentRecordDAC extends DacLibrary {
     ];
   }
 
-  public async recordCreate(data: IContentCreation): Promise<string> {
-    return await this.connector?.connection.remoteHandle().call("recordCreate", data);
+  public async recordNewContent(data: IContentCreation): Promise<string> {
+    return await this.connector?.connection.remoteHandle().call("recordNewContent", data);
   }
 
   public async recordInteraction(data: IContentInteraction): Promise<string> {

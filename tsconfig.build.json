@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-      "emitDeclarationOnly": true,
       "esModuleInterop": true,
       "strict": true,
       "noImplicitAny": true,
@@ -8,7 +7,7 @@
       "declarationMap": true,
       "isolatedModules": true,
       "moduleResolution": "node",
-      "target": "esnext",
+      "target": "ES6",
       "outDir": "dist",
     },
     "include": ["src"],
