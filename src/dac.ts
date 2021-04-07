@@ -10,8 +10,20 @@ export class ContentRecordDAC extends DacLibrary {
   }
   
   public getPermissions(): Permission[] {
-    const perm = new Permission(DAC_DOMAIN, DAC_DOMAIN, PermCategory.Discoverable, PermType.Read);
-    return [perm];
+    return [
+      new Permission(
+        DAC_DOMAIN,
+        DAC_DOMAIN,
+        PermCategory.Discoverable,
+        PermType.Read
+      ),
+      new Permission(
+        DAC_DOMAIN,
+        DAC_DOMAIN,
+        PermCategory.Discoverable,
+        PermType.Write
+      )
+    ];
   }
 
   public async recordCreate(data: IContentCreation): Promise<string> {

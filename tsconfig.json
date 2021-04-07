@@ -7,7 +7,7 @@
     "noImplicitAny": true,
     "declaration": true,
     "isolatedModules": true,
-    "types": ["node", "jest"],
+    "types": ["node"],
     "typeRoots": ["./node_modules/@types"],
     "strictNullChecks": true
   }
