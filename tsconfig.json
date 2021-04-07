@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "downlevelIteration": true,
-    "noEmit": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,
-    "declaration": true,
     "isolatedModules": true,
-    "types": ["node"],
-    "typeRoots": ["./node_modules/@types"],
-    "strictNullChecks": true
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "target": "esnext",
   }
 }
