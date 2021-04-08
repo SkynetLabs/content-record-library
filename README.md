@@ -66,7 +66,7 @@ of how a skapp could use the content record library and record user interactions
     import { SkynetClient } from 'skynet-js';
     import { ContentRecordDAC } from 'skynet-content-record-library';
 
-    (async func () => {
+    (async () => {
         // create client
         const client = new SkynetClient();
 
@@ -101,5 +101,5 @@ of how a skapp could use the content record library and record user interactions
         //     metadata: {"action": "liked"}
         // });
 
-    })()
+    })();
 ```
