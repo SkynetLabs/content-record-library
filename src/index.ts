@@ -8,7 +8,7 @@ import { DacLibrary } from 'skynet-js';
 const DAC_DOMAIN_NOOP = "vg1fcigo04n0nh1vj0s4tavso6anv8bqjfk9bs16s094gcjqm5dre48"
 
 // TODO: replace with live DAC domain
-const DAC_DOMAIN = DAC_DOMAIN_NOOP;
+const DAC_DOMAIN = "graio.hns";
 
 export class ContentRecordDAC extends DacLibrary {
   public constructor() {
