@@ -1,14 +1,5 @@
 # Content Record Library
 
-## NOTE (TODO: remove)
-
-Currently needs:
-
-```
-npm link skynet-mysky-utils
-npm link skynet-js // dac branch
-```
-
 ## Description
 
 The content record library is a library for skapp developers, allowing them to
@@ -63,43 +54,42 @@ Using the library is very straightforward. In this section we'll show an example
 of how a skapp could use the content record library and record user interactions.
 
 ```typescript
-    import { SkynetClient } from 'skynet-js';
-    import { ContentRecordDAC } from 'skynet-content-record-library';
+import { SkynetClient } from "skynet-js";
+import { ContentRecordDAC } from "skynet-content-record-library";
 
-    (async () => {
-        // create client
-        const client = new SkynetClient();
+(async () => {
+  // create client
+  const client = new SkynetClient();
 
-        // create content record
-        const contentRecord = new ContentRecordDAC();
+  // create content record
+  const contentRecord = new ContentRecordDAC();
 
-        // load mysky
-        const mySky = await client.loadMySky("exampleskapp.hns");
+  // load mysky
+  const mySky = await client.loadMySky("exampleskapp.hns");
 
-        // load DACs
-        await mySky.loadDacs(contentRecord);
+  // load DACs
+  await mySky.loadDacs(contentRecord);
 
-        // check login
-        const isLoggedIn = await mySky.checkLogin();
-        if (!isLoggedIn) {
-            // request login access
-        }
+  // check login
+  const isLoggedIn = await mySky.checkLogin();
+  if (!isLoggedIn) {
+    // request login access
+  }
 
-        // DAC is now loaded and ready for use:
-        //
-        // - on content being created we can call:
-        //
-        // await contentRecord.recordNewContent({
-        //     skylink,
-        //     metadata: {"foo": "bar"}
-        // });
-        //
-        // - on content being interacted with we can call:
-        //
-        // await contentRecord.recordInteraction({
-        //     skylink,
-        //     metadata: {"action": "liked"}
-        // });
-
-    })();
+  // DAC is now loaded and ready for use:
+  //
+  // - on content being created we can call:
+  //
+  // await contentRecord.recordNewContent({
+  //     skylink,
+  //     metadata: {"foo": "bar"}
+  // });
+  //
+  // - on content being interacted with we can call:
+  //
+  // await contentRecord.recordInteraction({
+  //     skylink,
+  //     metadata: {"action": "liked"}
+  // });
+})();
 ```

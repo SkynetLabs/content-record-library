@@ -9,5 +9,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
     "target": "esnext",
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

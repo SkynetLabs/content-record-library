@@ -1,14 +1,18 @@
 {
   "name": "content-record-library",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "This library exposes a class that wraps the Content Record DAC, created and hosted by SkynetLabs.",
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc --project tsconfig.build.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Peter-Jan Brone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SkynetHQ/content-record-library/issues"
+  },
+  "homepage": "https://github.com/SkynetHQ/content-record-library#readme",
   "dependencies": {
     "post-me": "^0.4.5",
     "skynet-js": "^3.0.2",

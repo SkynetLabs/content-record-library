@@ -2,13 +2,13 @@ import { IContentCreation, IContentInteraction } from "./types";
 import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
-// NO_OP points to a DAC that essentially only performs the handshake and
-// exposes the methods, but doesn't actually do anything aside from returning
-// success responses
-const NO_OP = "vg1fcigo04n0nh1vj0s4tavso6anv8bqjfk9bs16s094gcjqm5dre48"
+// DAC_DOMAIN_NOOP points to a DAC that essentially only performs the handshake
+// and exposes the API methods, but doesn't actually do anything aside from
+// returning success responses.
+const DAC_DOMAIN_NOOP = "vg1fcigo04n0nh1vj0s4tavso6anv8bqjfk9bs16s094gcjqm5dre48"
 
-// TODO: replace with NO_OP for initial release
-const DAC_DOMAIN = "vg15q86g896hhgthqqmhvjc5a64ep2g1nl5rpejpm9vese722qt8pk8";
+// TODO: replace with live DAC domain
+const DAC_DOMAIN = DAC_DOMAIN_NOOP;
 
 export class ContentRecordDAC extends DacLibrary {
   public constructor() {
