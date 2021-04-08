@@ -64,7 +64,7 @@ of how a skapp could use the content record library and record user interactions
 
 ```typescript
     import { SkynetClient } from 'skynet-js';
-    import { ContentRecordDAC } from 'skynet-cr-record';
+    import { ContentRecordDAC } from 'skynet-content-record-library';
 
     (async func () => {
         // create client
