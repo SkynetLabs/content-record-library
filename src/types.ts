@@ -8,7 +8,12 @@ export interface IContentInteraction {
   metadata: object;   // should be valid JSON
 }
 
+export interface IDACResponse {
+  submitted: boolean;
+  error?: string;
+}
+
 export interface IContentRecordDAC {
-  recordCreate(data: IContentCreation): Promise<string>;
-  recordInteraction(data: IContentInteraction): Promise<string>;
+  recordCreate(data: IContentCreation): Promise<IDACResponse>;
+  recordInteraction(data: IContentInteraction): Promise<IDACResponse>;
 }
