@@ -2,7 +2,8 @@ import { IContentCreation, IContentInteraction } from "./types";
 import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
-const DAC_DOMAIN = "vg185v74j9dusi38b4eguh88mijraeoa782l6acntbtsa5510sbagug";
+// TODO: replace with production DAC domain
+const DAC_DOMAIN = "vg15q86g896hhgthqqmhvjc5a64ep2g1nl5rpejpm9vese722qt8pk8";
 
 export class ContentRecordDAC extends DacLibrary {
   public constructor() {

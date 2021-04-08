@@ -1,79 +1,105 @@
 # Content Record Library
 
-## NOTE
+## NOTE (TODO: remove)
 
 Currently needs:
+
 ```
 npm link skynet-mysky-utils
 npm link skynet-js // dac branch
 ```
 
-## Introduction
+## Description
 
-The Content Record library is a small convenience class that extends from the
-`DacLibrary` and exposes all of the methods defined in the Content Record API.
-This library can be imported by skapp developers and provides an easy way to get
-started and use the DAC.
+The content record library is a library for skapp developers, allowing them to
+record the interactions of their users with pieces of content within the skapp
+that they are building. The main purpose of this tool is content discovery; if
+all skapps were to make use of this library, the end result would be a scrapable
+global record of all content and the popularity of that content and the skapp.
 
-The library will take care of setting up the iframe and initiating the handshake
-to establish a connection with the DAC.
+This information will eventually get displayed in a type of leaderboard that
+ranks top pieces of content and top skapps.
+
+## Interface
+
+The library itself is a simple class that acts as a wrapper around the Content
+Record DAC. This DAC, or Data Access Controller, is built and hosted by
+Skynetlabs. The library will contain a hardcoded reference to its domain, thus
+abstracting all of its complexities from the skapp developer.
+
+The skapp developer is expected to call upon the content record when its user
+perform the following two types of actions. This is when a user
+
+- `creates` content
+- `interacts` with a piece of content
+
+The content record library exports the following types, allowing the skapp
+developer to record new entries in the content record. Note that the content
+info has a metadata field, the skapp developer can add whatever metadata he
+would like to add here. In the case of an interaction with a piece of content,
+the metadata could give more information about the type of interaction for
+instance, e.g. "liked", "commented", etc...
+
+```typescript
+export interface IContentRecordDAC {
+  recordNewContent(content: IContentInfo): Promise<IResult>;
+  recordInteraction(content: IContentInfo): Promise<IResult>;
+}
+
+export interface IContentInfo {
+  skylink: string;
+  metadata: object; // should be valid JSON (capped in size ~=4kib)
+}
+
+export interface IResult {
+  success: boolean;
+  error?: string;
+}
+```
 
 ## Usage
 
-In this section we'll show an example of how a skapp could use the content
-record DAC. It shows how it would be loaded and interacted with from the context
-of a skapp.
+Using the library is very straightforward. In this section we'll show an example
+of how a skapp could use the content record library and record user interactions.
 
 ```typescript
     import { SkynetClient } from 'skynet-js';
-    import { ContentRecordDAC } from 'content-record-library';
+    import { ContentRecordDAC } from 'skynet-cr-record';
 
-    const DATA_DOMAIN = "mynewskapp.hns"
+    (async func () => {
+        // create client
+        const client = new SkynetClient();
 
-    class ExampleSkapp {
-        private contentRecord: ContentRecordDAC;
+        // create content record
+        const contentRecord = new ContentRecordDAC();
 
-        function init() {
-            // create client
-            const client = new SkynetClient();
+        // load mysky
+        const mySky = await client.loadMySky("exampleskapp.hns");
 
-            // load mysky
-            const mySky = await client.loadMySky(DATA_DOMAIN);
+        // load DACs
+        await mySky.loadDacs(contentRecord);
 
-            // create content record DAC
-            this.contentRecord = new ContentRecordDAC()
-
-            // load DAC
-            mySky.loadDac(this.contentRecord);
-
-            // check whether the user is logged in
-            try {
-                const loggedIn = mySky.checkLogin();
-                if (!loggedIn) {
-                    // handle
-                }
-            } catch(error) {
-                // handle
-            }
+        // check login
+        const isLoggedIn = await mySky.checkLogin();
+        if (!isLoggedIn) {
+            // request login access
         }
 
-        // example create function
-        function createContent(skylink: string) {
-            const result = await this.contentRecord.recordNewContent({
-                skylink,
-                metadata: {"foo": "bar"}
-            });
-            // possibly check result
-        }
+        // DAC is now loaded and ready for use:
+        //
+        // - on content being created we can call:
+        //
+        // await contentRecord.recordNewContent({
+        //     skylink,
+        //     metadata: {"foo": "bar"}
+        // });
+        //
+        // - on content being interacted with we can call:
+        //
+        // await contentRecord.recordInteraction({
+        //     skylink,
+        //     metadata: {"action": "liked"}
+        // });
 
-        // example interact function
-        function interactWithContent(skylink: string) {
-            const result = await this.contentRecord.recordInteraction({
-                skylink,
-                metadata: {"action": "liked"}
-            });
-            // possibly check result
-        }
-    }
-
+    })()
 ```
