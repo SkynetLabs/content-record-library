@@ -3,7 +3,8 @@ import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
 // TODO: replace with live DAC domain
-const DAC_DOMAIN = "graio.hns";
+// const DAC_DOMAIN = "graio.hns";
+const DAC_DOMAIN = "skynetbridge.hns";
 
 export class ContentRecordDAC extends DacLibrary {
   public constructor() {
