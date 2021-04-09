@@ -3,6 +3,7 @@ import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
 const DAC_DOMAIN = "crqa.hns";
+
 export class ContentRecordDAC extends DacLibrary implements IContentRecordDAC {
   public constructor() {
     super(DAC_DOMAIN);

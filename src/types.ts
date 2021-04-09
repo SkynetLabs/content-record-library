@@ -1,10 +1,10 @@
 export interface IContentCreation {
-  content: string;    // skylink
+  skylink: string;    // skylink
   metadata: object;   // should be valid JSON
 }
 
 export interface IContentInteraction {
-  content: string;    // skylink
+  skylink: string;    // skylink
   metadata: object;   // should be valid JSON
 }
 
