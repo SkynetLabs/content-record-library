@@ -8,6 +8,7 @@
       "isolatedModules": true,
       "outDir": "dist",
 
+      "moduleResolution": "node",
       "target": "esnext",
       "types": ["node"]
     },

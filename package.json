@@ -1,8 +1,12 @@
 {
   "name": "@skynethq/content-record-library",
-  "version": "0.2.3-beta",
+  "version": "0.2.4-beta",
   "description": "This library exposes a class that wraps the Content Record DAC, created and hosted by SkynetLabs.",
   "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc --project tsconfig.build.json",
     "test": "echo \"Error: no test specified\" && exit 1"

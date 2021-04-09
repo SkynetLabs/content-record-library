@@ -1,6 +1,7 @@
-import { IContentCreation, IContentInteraction, IContentRecordDAC, IDACResponse } from "./types";
-import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
+import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
+
+import { IContentCreation, IContentInteraction, IContentRecordDAC, IDACResponse } from "./types";
 
 const DAC_DOMAIN = "crqa.hns";
 
