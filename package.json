@@ -1,6 +1,6 @@
 {
-  "name": "content-record-library",
-  "version": "0.0.1",
+  "name": "@skynethq/content-record-library",
+  "version": "0.1.1",
   "description": "This library exposes a class that wraps the Content Record DAC, created and hosted by SkynetLabs.",
   "main": "dist/index.js",
   "scripts": {
@@ -13,9 +13,12 @@
     "url": "https://github.com/SkynetHQ/content-record-library/issues"
   },
   "homepage": "https://github.com/SkynetHQ/content-record-library#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "post-me": "^0.4.5",
-    "skynet-js": "^3.0.2",
+    "skynet-js": "^4.0.0-beta",
     "skynet-mysky-utils": "^0.1.0"
   },
   "devDependencies": {
