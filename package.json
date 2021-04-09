@@ -1,6 +1,6 @@
 {
   "name": "@skynethq/content-record-library",
-  "version": "0.2.1",
+  "version": "0.2.2-beta",
   "description": "This library exposes a class that wraps the Content Record DAC, created and hosted by SkynetLabs.",
   "main": "dist/index.js",
   "scripts": {
@@ -22,6 +22,7 @@
     "skynet-mysky-utils": "^0.1.0"
   },
   "devDependencies": {
+    "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "eslint-plugin-jsdoc": "^32.3.0",
