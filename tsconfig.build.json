@@ -8,6 +8,7 @@
       "isolatedModules": true,
       "outDir": "dist",
 
+      "target": "esnext",
       "types": ["node"]
     },
     "include": ["src/**/*"],
