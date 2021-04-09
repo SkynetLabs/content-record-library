@@ -33,8 +33,8 @@ instance, e.g. "liked", "commented", etc...
 
 ```typescript
 export interface IContentRecordDAC {
-  recordNewContent(content: IContentInfo): Promise<IDACResponse>;
-  recordInteraction(content: IContentInfo): Promise<IDACResponse>;
+  recordNewContent(...content: IContentInfo[]): Promise<IDACResponse>;
+  recordInteraction(...content: IContentInfo[]): Promise<IDACResponse>;
 }
 
 export interface IContentInfo {

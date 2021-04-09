@@ -1,9 +1,9 @@
-import { IContentCreation, IContentInteraction, IDACResponse } from "./types";
+import { IContentCreation, IContentInteraction, IContentRecordDAC, IDACResponse } from "./types";
 import { PermCategory, Permission, PermType } from "skynet-mysky-utils";
 import { DacLibrary } from 'skynet-js';
 
 const DAC_DOMAIN = "crqa.hns";
-export class ContentRecordDAC extends DacLibrary {
+export class ContentRecordDAC extends DacLibrary implements IContentRecordDAC {
   public constructor() {
     super(DAC_DOMAIN);
   }
@@ -25,11 +25,11 @@ export class ContentRecordDAC extends DacLibrary {
     ];
   }
 
-  public async recordNewContent(data: IContentCreation): Promise<IDACResponse> {
-    return await this.connector?.connection.remoteHandle().call("recordNewContent", data);
+  public async recordNewContent(...data: IContentCreation[]): Promise<IDACResponse> {
+    return await this.connector?.connection.remoteHandle().call("recordNewContent", ...data);
   }
 
-  public async recordInteraction(data: IContentInteraction): Promise<IDACResponse> {
-    return await this.connector?.connection.remoteHandle().call("recordInteraction", data);
+  public async recordInteraction(...data: IContentInteraction[]): Promise<IDACResponse> {
+    return await this.connector?.connection.remoteHandle().call("recordInteraction", ...data);
   }
 }

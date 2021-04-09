@@ -14,6 +14,6 @@ export interface IDACResponse {
 }
 
 export interface IContentRecordDAC {
-  recordCreate(data: IContentCreation): Promise<IDACResponse>;
-  recordInteraction(data: IContentInteraction): Promise<IDACResponse>;
+  recordNewContent(...data: IContentCreation[]): Promise<IDACResponse>;
+  recordInteraction(...data: IContentInteraction[]): Promise<IDACResponse>;
 }
