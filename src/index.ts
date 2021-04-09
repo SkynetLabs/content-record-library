@@ -28,10 +28,18 @@ export class ContentRecordDAC extends DacLibrary implements IContentRecordDAC {
   }
 
   public async recordNewContent(...data: IContentCreation[]): Promise<IDACResponse> {
-    return await this.connector?.connection.remoteHandle().call("recordNewContent", ...data);
+    if (!this.connector) {
+      throw new Error("Connector not initialized");
+    }
+
+    return await this.connector.connection.remoteHandle().call("recordNewContent", ...data);
   }
 
   public async recordInteraction(...data: IContentInteraction[]): Promise<IDACResponse> {
-    return await this.connector?.connection.remoteHandle().call("recordInteraction", ...data);
+    if (!this.connector) {
+      throw new Error("Connector not initialized");
+    }
+
+    return await this.connector.connection.remoteHandle().call("recordInteraction", ...data);
   }
 }
