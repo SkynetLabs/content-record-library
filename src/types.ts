@@ -1,11 +1,11 @@
 export interface IContentCreation {
-  skylink: string;    // skylink
-  metadata: object;   // should be valid JSON
+  skylink: string; // skylink
+  metadata: object; // should be valid JSON
 }
 
 export interface IContentInteraction {
-  skylink: string;    // skylink
-  metadata: object;   // should be valid JSON
+  skylink: string; // skylink
+  metadata: object; // should be valid JSON
 }
 
 export interface IDACResponse {
