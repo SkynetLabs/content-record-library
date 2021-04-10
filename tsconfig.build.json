@@ -6,8 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "isolatedModules": true,
-    "outDir": "dist",
-
+    "outDir": "dist/esm",
     "moduleResolution": "node",
     "target": "esnext",
     "types": ["node"]
