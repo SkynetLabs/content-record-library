@@ -1,13 +1,14 @@
 {
   "name": "@skynetlabs/content-record-library",
   "description": "This library exposes a class that wraps the Content Record DAC, created and hosted by SkynetLabs.",
-  "main": "dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "type": "module",
   "files": [
     "dist/*"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.build.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && tsc -p tsconfig.build.cjs.json",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
