@@ -1,6 +1,6 @@
 {
   "name": "@skynetlabs/content-record-library",
-  "version": "0.3.0",
+  "version": "0.4.0-beta",
   "description": "This library exposes a class that wraps the Content Record DAC, created and hosted by SkynetLabs.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "post-me": "^0.4.5",
-    "skynet-js": "^4.0.0-beta",
+    "skynet-js": "^4.0.1-beta",
     "skynet-mysky-utils": "^0.1.0"
   },
   "devDependencies": {
