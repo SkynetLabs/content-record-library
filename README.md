@@ -82,14 +82,36 @@ import { ContentRecordDAC } from "skynet-content-record-library";
   //
   // await contentRecord.recordNewContent({
   //     skylink,
-  //     metadata: {"foo": "bar"}
+  //     metadata: {foo: "bar"}
   // });
   //
   // - on content being interacted with we can call:
   //
   // await contentRecord.recordInteraction({
   //     skylink,
-  //     metadata: {"action": "liked"}
+  //     metadata: {action: "liked"}
   // });
 })();
+```
+
+## Metadata
+
+The metadata submitted to the content record can be used for a lot of purposes,
+there are other DACs that make use of this metadata already, and which supply a
+`link` field in the metadata under the `content` property.
+
+This `link` field is described in the skystandards, and should contain a URI
+from which the content can be retrieved. E.g. if you are submitting a record to
+the content record DAC that describes the creation of an image at certain
+skylink `_AT2YIzNUnzFH4QV-MMa_CuIJBTTypcbnv2_irbjYUMNxQ`, then a good submission
+would be:
+
+```typescript
+await contentRecord.recordInteraction({
+     skylink: '_AT2YIzNUnzFH4QV-MMa_CuIJBTTypcbnv2_irbjYUMNxQ',
+     metadata: {
+       content: { link: "https://siasky.net/_AT2YIzNUnzFH4QV-MMa_CuIJBTTypcbnv2_irbjYUMNxQ" },
+       description: "beautiful wallpaper"
+     }
+});
 ```
