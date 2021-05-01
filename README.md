@@ -107,7 +107,7 @@ skylink `_AT2YIzNUnzFH4QV-MMa_CuIJBTTypcbnv2_irbjYUMNxQ`, then a good submission
 would be:
 
 ```typescript
-await contentRecord.recordInteraction({
+await contentRecord.recordNewContent({
      skylink: '_AT2YIzNUnzFH4QV-MMa_CuIJBTTypcbnv2_irbjYUMNxQ',
      metadata: {
        content: { link: "https://siasky.net/_AT2YIzNUnzFH4QV-MMa_CuIJBTTypcbnv2_irbjYUMNxQ" },
